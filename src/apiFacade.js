@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/jwtdemo";
+const URL = "https://studiebois.dk/ca2";
  
 function handleHttpErrors(res) {
  if (!res.ok) {
