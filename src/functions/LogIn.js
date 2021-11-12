@@ -14,14 +14,20 @@
     }
    
     return (
+      <html>
+        <body> 
       <div>
-        <h2>Login</h2>
+        <h1>Velkommen Til Denne Seje Side</h1>
+        <img src="img/oliver-be-like.jpg" />
+        <h2>Log Venligst Ind Herunder:</h2>
         <form onChange={onChange} >
           <input placeholder="User Name" id="username" />
           <input placeholder="Password" id="password" />
           <button onClick={performLogin}>Login</button>
         </form>
-      </div>
+        </div>
+      </body>
+      </html>
     )
    
   }

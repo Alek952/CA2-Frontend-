@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import './LoggedIn.css';
 
 export default function LoggedIn({facade}) {
     const [dataFromServer, setDataFromServer] = useState("Loading...")
@@ -16,13 +17,17 @@ export default function LoggedIn({facade}) {
     }, [facade])
    
     return (
-      <div>
-        <h2>Data Received from server</h2>
-        <h3>{dataFromServer}</h3>
-        <p>
-            {errorMsg}
-        </p>
+      <html>
+      <div class="topnav">
+      <a class="active" href="#memes">Memes</a>
       </div>
+      <h2>Data Received from server</h2>
+      <h3>{dataFromServer}</h3>
+      <p>
+      {errorMsg}
+      </p>
+      </html>
+      
     )
    
   }
