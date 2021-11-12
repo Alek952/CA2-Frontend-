@@ -1,37 +1,32 @@
-import React, { useState   } from "react"
-import facade from "./facades/apiFacade";
-import LoggedIn from "./functions/LoggedIn";
-import LogIn from "./functions/LogIn";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Menu from "./functions/menuBar";
-
+import React, { useState,useEffect } from "react"
+import facade from "./apiFacade";
+import LoggedIn from "./LoggedIn";
+import LogIn from "./LogIn";
+ 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
-
-  const logout = () => {
-    facade.logout()
-    setLoggedIn(false)
-  }
+ 
+  const logout = () => { facade.logout()
+    setLoggedIn(false)} 
 
 
-  const login = (user, pass) => {
+const login = (user, pass) => {
+    
+ facade.login(user,pass)
+ .then(res =>setLoggedIn(true));
 
-    facade.login(user, pass)
-      .then(res => setLoggedIn(true));
-
-  }
-
+  } 
+ 
   return (
     <div>
       {!loggedIn ? (<LogIn login={login} />) :
         (<div>
-          <Menu />
           <LoggedIn facade={facade} />
           <button onClick={logout}>Logout</button>
         </div>)}
     </div>
   )
-
+ 
 }
 export default App;
-
+ 
